@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
 class GenderProvider with ChangeNotifier {
   bool _isMale = true;
@@ -8,4 +10,8 @@ class GenderProvider with ChangeNotifier {
     _isMale = newValue;
     notifyListeners();
   }
+
+  get color => isMale ? Colors.blue : Colors.pink;
+  get maleColor => isMale ? Colors.blue : Colors.grey;
+  get femaleColor => isMale ? Colors.grey : Colors.pink;
 }
